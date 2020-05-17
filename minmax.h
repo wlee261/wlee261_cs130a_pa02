@@ -1,13 +1,13 @@
 //minmax.h
 
 #ifndef MINMAX_H
-#define MINXMAX_H
+#define MINMAX_H
 
 #include <iostream>
 #include <vector>
 
 
-class minmax{
+class Minmax{
 	
 	public:
 		int getParent(int index);
@@ -28,6 +28,9 @@ class minmax{
 		std::string deleteMin();
 		void printHeap();
 		int getInt(std::string command);
+	private:
+		int A[1000000];
+		int size = 0;
 };
 
 #endif

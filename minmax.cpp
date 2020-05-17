@@ -10,41 +10,34 @@ using std::string;
 using std::vector;
 using std::stringstream;
 
-
-
-
-int A[1000000];
-int size = 0;
-
-
 //for convenience
-int minmax::getParent(int index)
+int Minmax::getParent(int index)
 {
     return((index-1)/2);
 }
-int minmax::getLeftChild(int index)
+int Minmax::getLeftChild(int index)
 {
     return(2*index+1);
 }
-int minmax::getRightChild(int index)
+int Minmax::getRightChild(int index)
 {
     return(2*index+2);
 }
 
-bool minmax::onMinLevel(int index)
+bool Minmax::onMinLevel(int index)
 {
     if(int(log2(index+1))%2 == 1)
         return true;
     return false;
 }
-bool minmax::onMaxLevel(int index)
+bool Minmax::onMaxLevel(int index)
 {
     if(int(log2(index+1))%2 == 0)
         return true;
     return false;
 }
 
-void minmax::trickleDown(int index)
+void Minmax::trickleDown(int index)
 {
     if(index == 0)
         return;
@@ -59,7 +52,7 @@ void minmax::trickleDown(int index)
 
 }
 
-void minmax::trickleDownMin(int index)
+void Minmax::trickleDownMin(int index)
 {
     int m;
     int descendants[6];
@@ -131,7 +124,7 @@ void minmax::trickleDownMin(int index)
 }
 
 
-void minmax::trickleDownMax(int index)
+void Minmax::trickleDownMax(int index)
 {
     int m;
     int descendants[6];
@@ -202,7 +195,7 @@ void minmax::trickleDownMax(int index)
 
 }
 
-void minmax::bubbleUp(int index)
+void Minmax::bubbleUp(int index)
 {
     if(onMinLevel(index))
     {
@@ -227,7 +220,7 @@ void minmax::bubbleUp(int index)
         bubbleUpMax(index);
 }
 
-void minmax::bubbleUpMin(int index)
+void Minmax::bubbleUpMin(int index)
 {
     if(A[getParent(getParent(index))])
     {
@@ -241,7 +234,7 @@ void minmax::bubbleUpMin(int index)
     }
 }
 
-void minmax::bubbleUpMax(int index)
+void Minmax::bubbleUpMax(int index)
 {
     if(A[getParent(getParent(index))])
     {
@@ -255,7 +248,7 @@ void minmax::bubbleUpMax(int index)
     }
 }
 
-int minmax::insert(int value)
+int Minmax::insert(int value)
 {
     A[size] = value;
     bubbleUp(size);
@@ -263,7 +256,7 @@ int minmax::insert(int value)
     return value;
 }
 
-string minmax::getMax()
+string Minmax::getMax()
 {
     int max;
     if(size = 0)
@@ -273,14 +266,14 @@ string minmax::getMax()
     max = A[2];
     return "max = " + max;
 }
-string minmax::getMin()
+string Minmax::getMin()
 {
     if(size = 0)
         return "0";
     return "min = " + A[0];
 }
 
-string minmax::deleteMin()
+string Minmax::deleteMin()
 {
     int min = A[0];
     A[0] = A[size-1];
@@ -290,7 +283,7 @@ string minmax::deleteMin()
     return "deleted " + min;
 
 }
-string minmax::deleteMax()
+string Minmax::deleteMax()
 {
     int maxIndex;
     int max;
@@ -307,7 +300,7 @@ string minmax::deleteMax()
     return "deleted " + max;
 }
 
-void minmax::printHeap()
+void Minmax::printHeap()
 {
     cout << "heap = ";
     for(int i = 0; i < size; i++)
@@ -316,7 +309,7 @@ void minmax::printHeap()
     }
 }
 
-int minmax::getInt(string command)
+int Minmax::getInt(string command)
 {
     stringstream ss;
     ss << command;

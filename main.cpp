@@ -5,12 +5,13 @@
 #include <math.h>
 #include "PA2_dataset.txt"
 #include "minmax.h"
+#include <fstream>
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
-    minmax mm;
+    Minmax mm;
     std::string line;
     std::ifstream myfile ("PA2_dataset.txt");
     if (myfile.is_open())
@@ -43,7 +44,7 @@ int main(int argc, char* argv[])
             mm.getMax();
         else if(result[i].substr(0,5) == "inser")
         {
-            mm.insert(getInt(result[i]));
+            mm.insert(mm.getInt(result[i]));
         }
         else if(result[i].substr(0,8) == "deleteMa")
             mm.deleteMax();
