@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 
+
 class minmax{
 	
 	public:
@@ -21,10 +22,10 @@ class minmax{
 		void bubbleUpMax();
 		void bubbleUpMin();
 		int insert();
-		string getMax();
-		string getMin();
-		string deleteMax();
-		string deleteMin();
+		std::string getMax();
+		std::string getMin();
+		std::string deleteMax();
+		std::string deleteMin();
 		void printHeap();
 		int getInt();
 };
