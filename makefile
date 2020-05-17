@@ -1,2 +1,4 @@
-prog2: minmax.cpp
-	g++ -o prog2.out minmax.cpp
+prog2: main.cpp minmax.cpp minmax.h
+	g++ -c minmax.cpp
+	g++ -c main.cpp
+	g++ minmax.o main.o -o prog2.out
