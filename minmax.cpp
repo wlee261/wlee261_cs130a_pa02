@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 #include <math.h>
-//#include <PA2_dataset.txt>
+#include <PA2_dataset.txt>
 
 using namespace std;
 class minmax
