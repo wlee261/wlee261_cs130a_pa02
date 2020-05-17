@@ -5,7 +5,7 @@
 #include <math.h>
 #include "PA2_dataset.txt"
 
-using namespace std;
+
 class minmax
 {
     int A[1000000];
@@ -328,26 +328,26 @@ class minmax
     }
 };
 
-void main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
-    string line;
-    ifstream myfile ("PA2_dataset.txt");
+    std::string line;
+    std::ifstream myfile ("PA2_dataset.txt");
     if (myfile.is_open())
     {
         while ( getline (myfile,line) )
         {
-            insert(stoi(line));
+            insert(std::stoi(line));
         }
         myfile.close();
     }
 
-    else cout << "Unable to open file"; 
-    string commands = argv[1];
-    vector<string> result;
-    stringstream s_stream(commands);
+    else std::cout << "Unable to open file"; 
+    std::string commands = argv[1];
+    std::vector<std::string> result;
+    std::stringstream s_stream(commands);
     while(s_stream.good())
     {
-        string substr;
+	std::string substr;
         getline(s_stream, substr, ',');
         result.push_back(substr);
     }
@@ -355,7 +355,7 @@ void main(int argc, char* argv[])
     for(int i = result.size(); i > 0; i--)
     {
         if(result[i].substr(0,5) == "printH")
-            printHeap();
+            minmax::printHeap();
         else if(result[i].substr(0,5) == "getMi")
             getMin();
         else if(result[i].substr(0,5) == "getMa")
