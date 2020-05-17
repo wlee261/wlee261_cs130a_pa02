@@ -10,13 +10,14 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+    minmax mm;
     std::string line;
     std::ifstream myfile ("PA2_dataset.txt");
     if (myfile.is_open())
     {
         while ( getline (myfile,line) )
         {
-            insert(std::stoi(line));
+            mm.insert(std::stoi(line));
         }
         myfile.close();
     }
@@ -35,19 +36,19 @@ int main(int argc, char* argv[])
     for(int i = result.size(); i > 0; i--)
     {
         if(result[i].substr(0,5) == "printH")
-            printHeap();
+            mm.printHeap();
         else if(result[i].substr(0,5) == "getMi")
-            getMin();
+            mm.getMin();
         else if(result[i].substr(0,5) == "getMa")
-            getMax();
+            mm.getMax();
         else if(result[i].substr(0,5) == "inser")
         {
-            insert(getInt(result[i]));
+            mm.insert(getInt(result[i]));
         }
         else if(result[i].substr(0,8) == "deleteMa")
-            deleteMax();
+            mm.deleteMax();
         else if(result[i].substr(0,8) == "deleteMi")
-            deleteMin();
+            mm.deleteMin();
 
     }
 
