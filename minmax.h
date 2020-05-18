@@ -6,7 +6,7 @@
 #include <iostream>
 #include <vector>
 
-namespace minmax{
+namespace namespace1{
 	class Minmax{
 		
 		public:

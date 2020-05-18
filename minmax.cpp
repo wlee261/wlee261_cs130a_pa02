@@ -10,7 +10,7 @@ using std::string;
 using std::vector;
 using std::stringstream;
 
-namespace minmax{
+namespace namespace1{
     int Minmax::getParent(int index)
     {
         return((index-1)/2);
