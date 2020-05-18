@@ -11,7 +11,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    namespace1::Minmax mm;
+    Minmax mm;
     std::string line;
     std::ifstream myfile ("PA2_dataset.txt");
     if (myfile.is_open())

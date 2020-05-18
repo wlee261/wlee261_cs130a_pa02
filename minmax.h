@@ -6,7 +6,6 @@
 #include <iostream>
 #include <vector>
 
-namespace namespace1{
 	class Minmax{
 		
 		public:
@@ -32,5 +31,4 @@ namespace namespace1{
 			int A[1000000];
 			int size = 0;
 	};
-}
 #endif

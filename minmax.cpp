@@ -10,7 +10,6 @@ using std::string;
 using std::vector;
 using std::stringstream;
 
-namespace namespace1{
     int Minmax::getParent(int index)
     {
         return((index-1)/2);
@@ -326,4 +325,4 @@ namespace namespace1{
         }
         return value;
     }
-}
+
